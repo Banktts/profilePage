@@ -34,7 +34,6 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-      name: Build
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@master
         with:
