@@ -43,4 +43,4 @@ jobs:
           port: ${{ secrets.PORT }}
           script: whoami
       - name: Run a one-line script
-          run: echo Hello, world!
+        run: echo Hello, world!
