@@ -47,11 +47,7 @@ jobs:
                   git pull
                   cd ./database
                   docker-compose down
-                  sleep 10
-                  docker volume rm database_BackendDb
-                  sleep 10
                   docker-compose up -d
-                  sleep 10
-                  docker exec -i database_mariadb_1 mysql -uroot -p10001000 bankttsDB < ./sql/inti.sql
+
       - name: Run a one-line script
         run: echo Hello, world!3
