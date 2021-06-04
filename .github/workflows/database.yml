@@ -49,6 +49,6 @@ jobs:
                   docker-compose down
                   docker volume rm database_BackendDb
                   docker-compose up -d
-                  docker exec -i database_mariadb_1 mysql -u root -p${{ secrets.SQLPASSWORD }} bankttsDB < ./sql/inti.sql 
+                  docker exec -it database_mariadb_1 mysql -uroot -p${{ secrets.SQLPASSWORD }} bankttsDB < ./sql/inti.sql 
       - name: Run a one-line script
         run: echo Hello, world!3
