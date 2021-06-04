@@ -2,7 +2,3 @@ CREATE TABLE user(
     USER_ID varchar(32) NOT NULL PRIMARY KEY,
     PASSWORD varchar(128) NOT NULL
 );
-CREATE TABLE userTest(
-    USER_ID varchar(32) NOT NULL PRIMARY KEY,
-    PASSWORD varchar(128) NOT NULL
-);
