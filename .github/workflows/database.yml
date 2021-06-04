@@ -41,6 +41,11 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          script: whoami
+          script: |
+                  cd ./profilePage
+                  git checkout database 
+                  git pull
+                  cd ./database
+                  docker-compose up -d
       - name: Run a one-line script
         run: echo Hello, world!
