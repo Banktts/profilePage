@@ -46,6 +46,10 @@ jobs:
                   git checkout database 
                   git pull
                   cd ./database
-                  docker-compose restart
+                  docker exec database_mariadb_1  /usr/bin/mysqldump -u root -p${{ secrets.SQLPASSWORD }} bankttsDB > backup.sql
+                  docker-compose down -v
+                  docker-compose up -d
+                  sleep 5
+                  cat backup.sql | docker exec -i database_mariadb_1 /usr/bin/mysql -u root -p${{ secrets.SQLPASSWORD }} bankttsDB
       - name: Run a one-line script
         run: echo Hello, world!3
