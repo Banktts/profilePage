@@ -48,6 +48,5 @@ jobs:
                   cd ./database
                   docker-compose down -v
                   docker-compose up -d
-      
       - name: Run a one-line script
         run: echo Hello, world!3
