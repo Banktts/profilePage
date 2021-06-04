@@ -47,7 +47,8 @@ jobs:
                   git pull
                   cd ./database
                   docker-compose down
+                  docker volume rm database_BackendDb
                   docker-compose up -d
-
+      
       - name: Run a one-line script
         run: echo Hello, world!3
