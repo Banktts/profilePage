@@ -46,8 +46,7 @@ jobs:
                   git checkout database 
                   git pull
                   cd ./database
-                  docker-compose down
-                  docker volume rm database_BackendDb
+                  docker-compose down -v
                   docker-compose up -d
       
       - name: Run a one-line script
