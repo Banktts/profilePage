@@ -9,15 +9,15 @@ services:
       - db_dba_password
     volumes:
       - BackendDb:/var/lib/mysql
-      - ./sql:/docker-entrypoint-initdb.d
-    environment:
-      
+      - ./sql/inti.sql:/docker-entrypoint-initdb.d/inti.sql
+    environment: 
       MYSQL_DATABASE: bankttsDB
       MYSQL_USER: banktts
       MYSQL_ROOT_PASSWORD_FILE: /run/secrets/db_root_password
       MYSQL_PASSWORD_FILE: /run/secrets/db_dba_password
     ports:
       - '9001:9000'
+    
 secrets:
   db_root_password:
     file: ./secrets/db_root_password.txt
