@@ -1,1 +1,4 @@
 database/backup.sql
+backend/src/main/scala/project
+backend/src/main/scala/target
+backend/.idea
